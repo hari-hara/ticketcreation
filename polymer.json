@@ -1,6 +1,6 @@
 {
 	"entrypoint": "index.html",
-	"shell": "src/ticketcreation/ticketcreation-app.js",
+	"shell": "src/ticketcreation-app/ticketcreation-app.js",
 	"sources": [
 		"src/*/*.*",
 		"package.json"
