@@ -18,6 +18,7 @@ class CreateTicket extends PolymerElement{
            ticketCreateajax.method = "get";
            ticketCreateajax.contentType = "application/json";
            ticketCreateajax.url = "http://10.117.189.53:8081/bank/breach/getFranchise";
+           this.requestType = 'franchise';
            ticketCreateajax.generateRequest(); 
     }
     static get properties(){
@@ -46,11 +47,12 @@ class CreateTicket extends PolymerElement{
            ticketCreateajax.contentType = "application/json";
            
            ticketCreateajax.url = "http://10.117.189.53:8081/bank/breach/getBusiness";
-           ticketCreateajax.body = {"name": this.selectedFranchise};
+           ticketCreateajax.body = {"name": this.selectedFranchise}; 
+           this.requestType = 'business';
            ticketCreateajax.generateRequest(); 
         }
     }
-    handleResponse(event){
+    handleResponse(event,requestType ){
         console.log(event.detail.response);
         console.log(event.detail.response.details);
         this.franchiseCategory = event.detail.response.details;
